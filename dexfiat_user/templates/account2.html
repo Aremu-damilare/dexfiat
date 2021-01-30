@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <h2 class="user-panel-title">Account Information</h2>
+                        <div class="alert-box alert-primary">
+                            <div class="alert-txt"><em class="ti ti-alert"></em>Confirm your email address</div>
+                            <a href="#" class="btn btn-sm btn-primary">Resend Email</a>
+                        </div><!-- .alert-box -->
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link "  href="{% url 'myprofile' %}">Personal Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'myprofile2' %}">Wallet Address</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#notification">Notification</a>
+                            </li>
+                        </ul><!-- .nav-tabs-line -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade " id="personal-data">
+                                <form method="POST">
+                                    <div class="input-item input-with-label">
+                                        <label for="full-name" class="input-item-label">Full Name</label>
+                                        <input class="input-bordered" type="text" id="full-name" name="full-name">
+                                    </div><!-- .input-item -->
+                                    <div class="input-item input-with-label">
+                                        <label for="sur-name" class="input-item-label">Surname</label>
+                                        <input class="input-bordered" type="text" id="sur-name" name="sur-name">
+                                    </div><!-- .input-item -->
+                                    <div class="input-item input-with-label">
+                                        <label for="email-address" class="input-item-label">Email Address</label>
+                                        <input class="input-bordered" type="text" id="email-address" name="email-address">
+                                    </div><!-- .input-item -->
+                                    <div class="input-item input-with-label">
+                                        <label for="mobile-number" class="input-item-label">Mobile Number</label>
+                                        <input class="input-bordered" type="text" id="mobile-number" name="mobile-number">
+                                    </div><!-- .input-item -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">Date of Birth</label>
+                                                <input class="input-bordered date-picker" type="text" id="date-of-birth" name="date-of-birth">
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="nationality" class="input-item-label">Nationality</label>
+                                                <select class="country-select" name="Nationality" id="Nationality">
+                                                    <option value="us">United State</option>
+                                                    <option value="uk">United KingDom</option>
+                                                    <option value="fr">France</option>
+                                                    <option value="ch">China</option>
+                                                    <option value="cr">Czech Republic</option>
+                                                    <option value="cb">Colombia</option>
+                                                </select>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                    <div class="gaps-1x"></div><!-- 10px gap -->
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary">Update</button>
+                                        <div class="gaps-2x d-sm-none"></div>
+                                        <span class="color-success"><em class="ti ti-check-box"></em> All Changes are saved</span>
+                                    </div>
+                                </form><!-- form -->
+                            </div><!-- .tab-pane -->
+                            <div class="tab-pane fade show active" id="wallet-address">
+                                <p>In order to receive your ICOX Tokens, please select your wallet addres and you have to put the address below input box. You will receive ICOX tokens to this address after the Token Sale end.</p>
+                                <form method="POST">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="swalllet" class="input-item-label">Select Wallet </label>
+                                                {% csrf_token %}
+                                                {{ profile_form2.wallet}}
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                    <div class="input-item input-with-label">
+                                        <label for="token-address" class="input-item-label">Your Address for tokens:</label>
+                                        <br>{{ profile_form2.wallet_address}}<br>
+                                        <span class="input-note">Note: Address should be ERC20-compliant.</span>
+                                    </div><!-- .input-item -->
+                                    <div class="gaps-2x"></div>
+                                    <div class="note note-plane note-danger">
+                                        <em class="fas fa-info-circle"></em>
+                                        <p>DO NOT USE your exchange wallet address such as Kraken, Bitfinex, Bithumb, Binance etc. You can use MetaMask, MayEtherWallet, Mist wallets etc. Do not use the address if you don’t have a private key of the your address. You WILL NOT receive ICOX Tokens and WILL LOSE YOUR FUNDS if you do.</p>
+                                    </div>
+                                    <div class="gaps-3x"></div>
+                                    <div class="gaps-1x"></div><!-- 10px gap -->
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary">Update</button>
+                                        <div class="gaps-2x d-sm-none"></div>
+                                        <span class="color-success"><em class="ti ti-check-box"></em> Saved your wallet address</span>
+                                    </div>
+                                </form><!-- form -->
+                            </div><!-- .tab-pane -->
+                            <div class="tab-pane fade" id="notification">
+                                <p>You can manage your all kind of notification from here.</p>
+                                <div class="gaps-1x"></div>
+                                <ul class="notification-list">
+                                    <li>
+                                        <span>Notify me by email about resumption of sales</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" id="rsmpts"><label for="rsmpts"></label></div>
+                                    </li>
+                                    <li>
+                                        <span>Notify me by email for latest news</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="lnews"><label for="lnews"></label></div>
+                                    </li>
+                                    <li>
+                                        <span>Alert me by email for unusual activity.</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="unuact"><label for="unuact"></label></div>
+                                    </li>
+                                </ul>
+                                <div class="gaps-4x"></div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span></span>
+                                    <span class="color-success"><em class="ti ti-check-box"></em> Update Notification Settings</span>
+                                </div>
+                            </div><!-- .tab-pane -->
+                        </div><!-- .tab-content -->
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+    {% endblock content %}

@@ -1,0 +1,69 @@
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block content %}
+<body>
+     <div class="user-ath-page">
+       <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 text-center">
+                    <div class="user-ath-logo">
+                        <a href="#">
+                            <img src="{% static 'images/logo-sm.png' %}"  srcset="images/logo-sm2x.png 2x" alt="icon">
+                        </a>
+                    </div>
+                    <div class="user-ath-box">
+                        <h4>Creat New Account</h4>
+                        <form method="post" >
+                            {% csrf_token %}
+                            <!--
+                            <div class="note note-lg note-no-icon note-danger">
+                                <p>Please check your submited information for error.</p>
+                            </div>
+                            <div class="note note-lg note-no-icon note-success">
+                                <p>Your registration is succesfull, please check you email to confirm.</p>
+                            </div>
+-->
+
+                                {% for field in form %}
+                                {{ field.label_tag }}<div class="input-item">
+                                    
+                                    {{ field }}
+                                </div>
+                                    {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                    {% endfor %}
+                                
+                                {% endfor %}
+
+
+                            <!-- <div class="input-item text-left">
+                                <input class="input-checkbox" id="term-condition" type="checkbox">
+                                <label for="term-condition">I agree to <a href="#">Terms</a> and <a href="#"> Policy.</a></label>
+                            </div> -->
+                            <div class="gaps"></div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+
+                        
+                        <div class="or-saparator"><span>or</span></div>
+                        <span class="small-heading">Sign in with:</span>
+                        
+                        <ul class="btn-grp guttar-30px">
+                            <li><a href="{% url 'social:begin' 'facebook' %}" class="btn btn-sm btn-icon btn-facebook"><em class="fab fa-facebook-f"></em>Facebook</a></li>
+                            <li><a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-sm btn-icon btn-google"><em class="fab fa-google"></em>Google</a></li>
+                        </ul>
+                    </div>
+                    <div class="gaps-2x"></div>
+                    <div class="form-note">
+                        Already a member? <a href="{% url 'login' %}">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    
+    
+    {% endblock %}

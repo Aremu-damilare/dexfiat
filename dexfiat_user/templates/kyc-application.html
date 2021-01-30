@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<body class="user-dashboard">
+  
+
+                <form enctype="multipart/form-data"  method="post"  action=".">
+
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <div class="input-item input-with-label">
+                           
+                            {{ form }}
+                        </div><!-- .input-item -->
+                    </div><!-- .col -->
+                  
+                   
+                        <!-- verification 2 starts here   -->
+
+
+                    <div class="form-actions">
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form> 
+    
+
+
+
+
+                <div class="modal fade" id="kycConfirm" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="kyc-popup">
+                                <h2 class="text-center">Confirm Information</h2>
+                                <div class="input-item">
+                                    <input class="input-checkbox" id="term-condition" type="checkbox">
+                                    <label for="term-condition">I have read the <a href="#">Terms of Condition</a> and <a href="#">Privary Policy.</a></label>
+                                </div>
+                                <div class="input-item">
+                                    <input class="input-checkbox" id="info-currect" type="checkbox">
+                                    <label for="info-currect">All the personal information I have entered is correct.</label>
+                                </div>
+                                <div class="input-item">
+                                    <input class="input-checkbox" id="certification" type="checkbox">
+                                    <label for="certification">I certify that, I am perticipating in the token distribution event in the capacity of an individual (and benificial owner) and not as an agent (or representative of a third party corporate entity.</label>
+                                </div>
+                                <div class="input-item">
+                                    <input class="input-checkbox" id="tokenKnow" type="checkbox">
+                                    <label for="tokenKnow">I understand that, I can only in the token distribution event with the wallet address that was entered in the application form.</label>
+                                </div>
+                                <div class="gaps-2x"></div>
+                                <!-- <div class="text-center"><a href="kyc-status.html" class="btn btn-primary">Process for Verify</a></div> -->
+                            </div><!-- .modal-content -->
+                        </div><!-- .modal-content -->
+                    </div><!-- .modal-dialog -->
+                </div><!-- Modal End -->
+
+
+
+           
+        </div><!-- .user-kyc -->
+    </div><!-- .user-content -->
+</div><!-- .d-flex -->
+</div><!-- .container -->
+</div>
+<!-- UserWraper End -->
+
+{% endblock content %}

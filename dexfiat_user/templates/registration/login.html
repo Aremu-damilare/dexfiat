@@ -1,0 +1,66 @@
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block content %}
+
+
+   <div class="user-ath-page">
+       <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8  text-center">
+                    <div class="user-ath-logo">
+                        <a href="#">
+                            <img src="{% static 'images/logo-sm.png' %}"  srcset="images/logo-sm2x.png 2x" alt="icon">
+                        </a>
+                    </div>
+                    <div class="user-ath-box">
+                        <h4>Login to Your Account</h4>
+                        <div class="note note-lg note-no-icon note-danger">
+                        {% if form.errors %}
+                        <p style="color: red">Your username and password didn't match. Please try again.</p>
+                      {% endif %}
+                    </div>
+                        <form method="post" class="user-ath-form" >
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}" />
+                            {% for field in form %}
+
+                        <p>
+                            <div class="input-item">
+                            {{ field.label_tag }}
+                            
+                            {{ field }}
+                            </div>
+                            {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                            {% if field.help_text %}
+                            <p><small style="color: grey">{{ field.help_text }}</small></p>
+                            {% endif %}
+                        </p>
+                            {% endfor %}
+
+                            <div class="gaps"></div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-primary" type="submit">Log in</button>
+                                <a href="recovery.html" class="simple-link">Forgot password?</a>
+                            </div>
+                        </form>
+                        <div class="or-saparator"><span>or</span></div>
+                        <span class="small-heading">Log in with:</span>
+                        
+                        <ul class="btn-grp guttar-30px">
+                            <li><a href="{% url 'social:begin' 'facebook' %}" class="btn btn-sm btn-icon btn-facebook"><em class="fab fa-facebook-f"></em>Facebook</a></li>
+                            <li><a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-sm btn-icon btn-google"><em class="fab fa-google"></em>Google</a></li>
+                        </ul>
+                    </div>
+                    <div class="gaps-2x"></div>
+                    <div class="form-note">
+                        Not a member? <a href="{% url 'signup' %}">Sign up now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                        
+    
+    {% endblock %}

@@ -1,0 +1,13 @@
+<h1>Contact Us</h1>
+<form method="post">
+    {% csrf_token %}
+    
+  
+    subject{{ form.subject }}
+    message:{{ form.message}}
+    <input id="from_email" type="text" name="from_email" value="{{ user.email }}" readonly>
+
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>

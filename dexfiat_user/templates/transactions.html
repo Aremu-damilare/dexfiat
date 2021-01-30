@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <h2 class="user-panel-title">Transactions</h2>
+                        
+                        <!-- if there is no transaction you can use this code -->
+                        <!-- <div class="status status-empty">
+                            <div class="status-icon">
+                                <em class="ti ti-files"></em>
+                                <div class="status-icon-sm">
+                                    <em class="ti ti-close"></em>
+                                </div>
+                            </div>
+                            <span class="status-text">You have not contributed yet! You should make some.</span>
+                            <a href="tokens.html" class="btn btn-primary">Contribute Now</a>
+                        </div> -->
+                        
+                        <table class="data-table tranx-table">
+                            <thead>
+                                <tr>
+                                    <th class="tranx-status"></th>
+                                    <th class="tranx-no"><span>TNX NO</span></th>
+                                    <th class="tranx-token"><span>Tokens</span></th>
+                                    <th class="tranx-amount"><span>Amount</span></th>
+                                    <th class="tranx-from"><span>From</span></th>
+                                    <th class="tranx-action"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-pending"><span class="d-none">Pending</span><em class="ti ti-alert"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxPending"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-cancled"><span class="d-none">Canceled</span><em class="ti ti-close"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    <td class="tranx-no"><span>ICIYOW0102</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-token"><span>+5,600</span>ICOX</td>
+                                    <td class="tranx-amount"><span>56.00</span>ETH <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>1F1t....4xqX</span>08 Jul, 18  10:20PM</td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+    
+    <div class="modal fade" id="tranxPending" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
+                <div class="tranx-popup">
+                    <h5>View Transaction Details</h5>
+                    <div class="tranx-purchase-details d-none active">
+                        <p>Transaction <strong>ICIYOW0102</strong> was place on <strong>24-Jul-2018, 12:10 am</strong> and <br> is currently <strong>Pending Payment</strong>. <a href="#" class="make-pay">Please Make your payment <em class="ti ti-arrow-right"></em></a></p>
+                        <h6>Purchase Details</h6>
+                        <ul class="tranx-purchase-info">
+                            <li>
+                                <div class="tranx-purchase-head">Package Name</div>
+                                <div class="tranx-purchase-des">ICO Phace 3</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Payment Method</div>
+                                <div class="tranx-purchase-des">ETH</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Your Contribution</div>
+                                <div class="tranx-purchase-des">1</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Token (T)</div>
+                                <div class="tranx-purchase-des">
+                                    <span>4,780.00</span>
+                                    <span>(4780 * 1)</span>
+                                </div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Bonus Tokens (B)</div>
+                                <div class="tranx-purchase-des">
+                                    <span>956.00</span>
+                                    <span>(956 * 1)</span>
+                                </div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Total Tokens</div>
+                                <div class="tranx-purchase-des">
+                                    <span>5,736.00</span>
+                                    <span>(T+B)</span>
+                                </div>
+                            </li><!-- li -->
+                        </ul><!-- .tranx-purchase-info -->
+                        
+                        <h6>Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
+                        <div class="tranx-payment-info">
+                            <em class="fab fa-ethereum"></em>
+                            <input type="text" class="tranx-payment-address" value="0x4156d3342d5c385a87d264f90653733592000581" disabled>
+                        </div><!-- .tranx-payment-info -->
+                    </div><!-- .tranx-payment-details -->
+                    <div class="tranx-payment-details d-none">
+                        <p>Hi, Your transaction <strong>ICIYOW0102</strong> is still <strong>Pending Payment</strong><br> You will receive <strong>5,470 ICOX</strong> tokens (incl. bonus of 450 ICOX) once paid.</p>
+                        <h6>Please make your Payment to the bellow Address</h6>
+                        <div class="tranx-payment-info">
+                            <span class="tranx-copy-feedback copy-feedback"></span>
+                            <em class="fab fa-ethereum"></em>
+                            <input type="text" class="tranx-payment-address copy-address" value="0x4156d3342d5c385a87d264f90653733592000581" disabled>
+                            <a href="#" class="tranx-payment-copy copy-trigger"><em class="ti ti-files"></em></a>
+                        </div><!-- .tranx-payment-info -->
+                        <ul class="tranx-info-list">
+                            <li><span>SET GAS LIMIT:</span> 120 000</li>
+                            <li><span>SET GAS PRICE:</span> 95 Gwei</li>
+                        </ul><!-- .tranx-info-list -->
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="tranx-info-qr">
+                                    <span>OR Scan bellow QR Code to pay</span>
+                                    <img class="tranx-info-qrimg" src="images/eth-qr.png" alt="qr">
+                                    <div class="gaps-4x"></div>
+                                    <a href="#" class="btn btn-light pay-done">OK</a>
+                                    <div class="gaps-1x"></div>
+                                    <a href="#" class="btn btn-xs btn-uline btn-uline-danger">Cancel Payment</a>
+                                    <div class="gaps-2x d-sm-none"></div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-sm-7">
+                                <div class="note note-info">
+                                    <em class="fas fa-info-circle"></em>
+                                    <p>Do not make payment through exchange (Kraken, Bitfinex). You can use MetaMask, MayEtherWallet, Mist wallets etc.</p>
+                                </div>
+                                <div class="gaps-1x"></div>
+                                <div class="note note-danger">
+                                    <em class="fas fa-info-circle"></em>
+                                    <p>In case you send a different amount ETH, the number of ICOX tokens will update accordingly.</p>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .tranx-payment-details -->
+                </div><!-- .tranx-popup -->
+            </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+    </div>
+    <!-- Modal End -->
+    
+    
+    <div class="modal fade" id="tranxApproved" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
+                <div class="tranx-popup">
+                    <h5>View Transaction Details</h5>
+                    <p>Transaction <strong>ICIYOW0102</strong> was place on <strong>24-Jul-2018, 12:10 am</strong> and <br> it’s  <strong>Successfully Paid.</strong></p>
+                    <div class="tranx-purchase-details">
+                        <h6>Purchase Details</h6>
+                        <ul class="tranx-purchase-info">
+                            <li>
+                                <div class="tranx-purchase-head">Package Name</div>
+                                <div class="tranx-purchase-des">ICO Phace 3</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Payment Method</div>
+                                <div class="tranx-purchase-des">ETH</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Your Contribution</div>
+                                <div class="tranx-purchase-des">1</div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Token (T)</div>
+                                <div class="tranx-purchase-des">
+                                    <span>4,780.00</span>
+                                    <span>(4780 * 1)</span>
+                                </div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Bonus Tokens (B)</div>
+                                <div class="tranx-purchase-des">
+                                    <span>956.00</span>
+                                    <span>(956 * 1)</span>
+                                </div>
+                            </li><!-- li -->
+                            <li>
+                                <div class="tranx-purchase-head">Total Tokens</div>
+                                <div class="tranx-purchase-des">
+                                    <span>5,736.00</span>
+                                    <span>(T+B)</span>
+                                </div>
+                            </li><!-- li -->
+                        </ul><!-- .tranx-purchase-info -->
+                        
+                        <h6>Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
+                        <div class="tranx-payment-info">
+                            <em class="fab fa-ethereum"></em>
+                            <input type="text" class="tranx-payment-address" value="0x4156d3342d5c385a87d264f90653733592000581" disabled>
+                        </div><!-- .tranx-payment-info -->
+                    </div><!-- .tranx-payment-details -->
+                </div><!-- .tranx-popup -->
+            </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+    </div>
+    <!-- Modal End -->
+    
+    
+    <div class="footer-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="footer-copyright">Copyright 2018, <a href="#">DexFiat</a>.  All Rights Reserved.</span>
+                </div><!-- .col -->
+                <div class="col-md-5 text-md-right">
+                    <ul class="footer-links">
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="policy.html">Terms of Sales</a></li>
+                    </ul>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div>
+    <!-- FooterBar End -->
+    
+{% endblock content %}
